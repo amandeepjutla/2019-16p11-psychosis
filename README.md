@@ -6,7 +6,7 @@ Extract the officially released Simons VIP 16p11.2 dataset archive into `data/cl
 
 # Tested configuration
 
-Output of `sessionInfo()`:
+Output of `sessionInfo()` for my configuration:
 
 ```
 R version 3.5.1 (2018-07-02)
@@ -67,6 +67,6 @@ loaded via a namespace (and not attached):
 [103] quadprog_1.5-5
 ```
 
-# Changelog
+# About
 
-20190416: Initial release.
+Last updated 20190417 by Amandeep Jutla.
