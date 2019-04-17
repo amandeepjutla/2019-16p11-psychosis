@@ -1,0 +1,1 @@
+Table 4: Pairwise combinations between index measures

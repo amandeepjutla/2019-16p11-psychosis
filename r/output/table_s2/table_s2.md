@@ -1,0 +1,1 @@
+Table S2: ADOS total calibrated severity score as predictor of psychosis

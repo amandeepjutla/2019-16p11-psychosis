@@ -1,0 +1,1 @@
+Table 3: Index measures by carrier status

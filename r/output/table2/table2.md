@@ -1,0 +1,1 @@
+Table 2: Phenotypic assessment measures

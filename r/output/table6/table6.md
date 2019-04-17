@@ -1,0 +1,1 @@
+Table 6: Predictors of psychotic symptoms within carrier status-defined subsets

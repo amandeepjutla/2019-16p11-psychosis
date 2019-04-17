@@ -1,0 +1,1 @@
+Table 5: Predictors of psychotic symptoms in entire sample
