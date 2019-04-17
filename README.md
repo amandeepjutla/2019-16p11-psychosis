@@ -77,4 +77,4 @@ loaded via a namespace (and not attached):
 
 # Questions
 
-Contact <Amandeep.Jutla AT nyspi DOT columbia DOT edu>.
+Contact <Amandeep.Jutla@nyspi.columbia.edu>.
