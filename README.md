@@ -1,4 +1,6 @@
-Scripts to reproduce the analyses reported in Jutla A, Turner JB, Snyder LG, Chung WK, Veenstra-VanderWeele J. "Psychotic symptoms in 16p11.2 copy number variant carriers." Manuscript in preparation.
+# 2019-16p11-psychosis
+
+These scripts will reproduce the analyses reported in Jutla A, Turner JB, Snyder LG, Chung WK, Veenstra-VanderWeele J. "Psychotic symptoms in 16p11.2 copy number variant carriers." Manuscript in preparation.
 
 # How to use
 
@@ -6,7 +8,7 @@ Extract the officially released Simons VIP 16p11.2 dataset archive into `data/cl
 
 # Tested configuration
 
-Output of `sessionInfo()` for my configuration:
+Output of `sessionInfo()` for my environment:
 
 ```
 R version 3.5.1 (2018-07-02)
@@ -67,6 +69,12 @@ loaded via a namespace (and not attached):
 [103] quadprog_1.5-5
 ```
 
-# About
+# Changelog
 
-Last updated 20190417 by Amandeep Jutla.
+- 2090417: cleaned up a little.
+- 20190416: uploaded code.
+- 20190202: created repository.
+
+# Questions
+
+Contact <Amandeep.Jutla AT nyspi DOT columbia DOT edu>.
