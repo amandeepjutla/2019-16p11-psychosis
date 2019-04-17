@@ -71,7 +71,7 @@ loaded via a namespace (and not attached):
 
 # Changelog
 
-- 2090417: cleaned up a little.
+- 20190417: cleaned up a little.
 - 20190416: uploaded code.
 - 20190202: created repository.
 
