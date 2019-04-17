@@ -51,8 +51,7 @@ tibble(
 ) %>% 
   unnest() %>% 
   mutate_if(is.numeric, round, digits = 2) %>%
-  write_excel_csv("./output/table1/summary_stats.csv")
-
+  write_excel_csv(here("r","output","table1","summary_stats.csv"))
 # group comparisons
 
 anova <- list()
@@ -97,7 +96,7 @@ tibble(
   unnest() %>%
   mutate_at(vars(-variable, -term, -p.value), 
             round, digits = 2) %>%
-  write_excel_csv("./output/table1/anova.csv")
+  write_excel_csv(here("r","output","table1","anova.csv"))
 
 tibble(
   variable = c("gender","asd","ocd"),
@@ -105,7 +104,7 @@ tibble(
 ) %>% unnest() %>%
   mutate_at(vars(-variable, -method, -p.value), 
             round, digits = 2) %>%  
-  write_excel_csv("./output/table1/chi.csv")
+  write_excel_csv(here("r","output","table1","chi.csv"))
 
 tibble(
   variable = c("iq","age"),
@@ -114,13 +113,13 @@ tibble(
   unnest() %>%
   mutate_at(vars(-variable, -term, -comparison, -adj.p.value), 
             round, digits = 2) %>%  
-  write_excel_csv("./output/table1/anova_posthoc.csv")
+  write_excel_csv(here("r","output","table1","anova_posthoc.csv"))
 
 tibble(
   variable = c("gender","asd","ocd"),
   test = chi_posthoc %>% map(as.tibble)
 ) %>% unnest() %>%
-  write_excel_csv("./output/table1/chi_posthoc.csv")
+  write_excel_csv(here("r","output","table1","chi_posthoc.csv"))
 
 # Table 2 ------------------------------------------------------------
 
@@ -195,7 +194,7 @@ tibble(
     map(function (x) nrow(x))
 ) %>% 
   unnest() %>%
-  write_excel_csv("./output/table2/table2.csv")
+  write_excel_csv(here("r","output","table2","table2.csv"))
 
 # Table 3 -------------------------------------------------------------
 
@@ -256,7 +255,7 @@ tibble(
 ) %>% 
   unnest() %>%
   mutate_if(is.numeric, round, digits = 2) %>%
-  write_excel_csv("./output/table3/table3.csv")
+  write_excel_csv(here("r","output","table3","table3.csv"))
 
 # Table 4 -------------------------------------------------------------
 
@@ -308,7 +307,7 @@ tibble(
     filter(disc_missingness == 1 & sops_missingness == 1) %>% 
     nrow()
 ) %>% 
-  write_excel_csv("./output/table4/pairwise_combinations.csv")
+  write_excel_csv(here("r","output","table4","pairwise_combinations.csv"))
 
 crosstabs <- list()
 crosstabs$bcl_scl <- xtabs(
@@ -332,7 +331,7 @@ tibble(
   unnest() %>% 
   mutate_at(vars(-pair, -p.value, -method, -alternative), 
             round, digits = 2) %>%
-  write_excel_csv("./output/table4/relationship_strengths.csv")
+  write_excel_csv(here("r","output","table4","relationship_strengths.csv"))
 
 index_measures <- subjects$raw$total %>%
   select(scl_missingness_binary, 
@@ -388,11 +387,11 @@ correlations_p_rounded <- correlations$P %>% round(digits=3)
 
 correlations_r_rounded %>% 
   as.data.frame() %>%
-  write_excel_csv("./output/correlation_matrix/cor_r.csv")
+  write_excel_csv(here("r","output","correlation_matrix","cor_r.csv"))
 
 correlations_p_rounded %>% 
   as.data.frame() %>%
-  write_excel_csv("./output/correlation_matrix/cor_p.csv")
+  write_excel_csv(here("r","output","correlation_matrix","cor_p.csv"))
 
 # Table 5 ----------------------------------------
 
@@ -415,16 +414,17 @@ models$base$all <-
 models$base$all %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table5/table5_or.csv")
+  write_excel_csv(here("r","output","table5","table5_or.csv"))
+
 
 models$base$all %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
-  write_excel_csv("./output/table5/table5_unrounded.csv")
+  write_excel_csv(here("r","output","table5","table5_unrounded.csv"))
 
 models$base$all %>%
   tidy(conf.int = TRUE, exponentiate = FALSE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table5/table5_b.csv")
+  write_excel_csv(here("r","output","table5","table5_b.csv"))
 
 # Table 6 -------------------------------------------------------------
 
@@ -444,16 +444,16 @@ models$base$duplication_only <-
 models$base$duplication_only %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table6/dup_or.csv")
+  write_excel_csv(here("r","output","table6","dup_or.csv"))
 
 models$base$duplication_only %>%
   tidy(conf.int = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table6/dup_b.csv")
+  write_excel_csv(here("r","output","table6","dup_b.csv"))
 
 models$base$duplication_only %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
-  write_excel_csv("./output/table6/dup_unrounded.csv")
+  write_excel_csv(here("r","output","table6","dup_unrounded.csv"))
 
 models$base$deletion_only <- 
   geeglm(binary_psychosis ~ 
@@ -470,16 +470,16 @@ models$base$deletion_only <-
 models$base$deletion_only %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table6/del_or.csv")
+  write_excel_csv(here("r","output","table6","del_or.csv"))
 
 models$base$deletion_only %>%
   tidy(conf.int = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table6/del_b.csv")
+  write_excel_csv(here("r","output","table6","del_b.csv"))
 
 models$base$deletion_only %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
-  write_excel_csv("./output/table6/del_unrounded.csv")
+  write_excel_csv(here("r","output","table6","del_unrounded.csv"))
 
 models$base$noncarriers <- 
   geeglm(binary_psychosis ~ 
@@ -496,16 +496,16 @@ models$base$noncarriers <-
 models$base$noncarriers %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table6/nc_or.csv")
+  write_excel_csv(here("r","output","table6","nc_or.csv"))
 
 models$base$noncarriers %>%
   tidy(conf.int = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table6/nc_b.csv")
+  write_excel_csv(here("r","output","table6","nc_b.csv"))
 
 models$base$noncarriers %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
-  write_excel_csv("./output/table6/nc_unrounded.csv")
+  write_excel_csv(here("r","output","table6","nc_unrounded.csv"))
 
 # Table S2 ---------------------------------------------------------
 
@@ -528,16 +528,16 @@ models$exploratory$total_css <-
 models$exploratory$total_css %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table_s2/total_css_all_or.csv")
+  write_excel_csv(here("r","output","table_s2","total_css_all_or.csv"))
 
 models$exploratory$total_css %>%
   tidy(conf.int = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table_s2/total_css_all_b.csv")
+  write_excel_csv(here("r","output","table_s2","total_css_all_b.csv"))
 
 models$exploratory$total_css %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
-  write_excel_csv("./output/table_s2/total_css_all_unrounded.csv")
+  write_excel_csv(here("r","output","table_s2","total_css_all_unrounded.csv"))
 
 exploratory_duplication <- filter(subjects$analysis$duplication, !is.na(ados_css_total_combined))
 
@@ -556,16 +556,16 @@ models$exploratory$total_css_duplication <-
 models$exploratory$total_css_duplication %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table_s2/total_css_dup_or.csv")
+  write_excel_csv(here("r","output","table_s2","total_css_dup_or.csv"))
 
 models$exploratory$total_css_duplication %>%
   tidy(conf.int = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table_s2/total_css_dup_b.csv")
+  write_excel_csv(here("r","output","table_s2","total_css_dup_b.csv"))
 
 models$exploratory$total_css_duplication %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
-  write_excel_csv("./output/table_s2/total_css_dup_unrounded.csv")
+  write_excel_csv(here("r","output","table_s2","total_css_dup_unrounded.csv"))
 
 exploratory_deletion <- filter(subjects$analysis$deletion, !is.na(ados_css_total_combined))
 
@@ -584,16 +584,16 @@ models$exploratory$total_css_deletion <-
 models$exploratory$total_css_deletion %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table_s2/total_css_del_or.csv")
+  write_excel_csv(here("r","output","table_s2","total_css_del_or.csv"))
 
 models$exploratory$total_css_deletion %>%
   tidy(conf.int = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table_s2/total_css_del_b.csv")
+  write_excel_csv(here("r","output","table_s2","total_css_del_b.csv"))
 
 models$exploratory$total_css_deletion %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
-  write_excel_csv("./output/table_s2/total_css_del_unrounded.csv")
+  write_excel_csv(here("r","output","table_s2","total_css_del_unrounded.csv"))
 
 exploratory_noncarrier <- filter(subjects$analysis$noncarrier, !is.na(ados_css_total_combined))
 
@@ -612,16 +612,16 @@ models$exploratory$total_css_noncarrier <-
 models$exploratory$total_css_noncarrier %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table_s2/total_css_nc_or.csv")
+  write_excel_csv(here("r","output","table_s2","total_css_nc_or.csv"))
 
 models$exploratory$total_css_noncarrier %>%
   tidy(conf.int = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table_s2/total_css_nc_b.csv")
+  write_excel_csv(here("r","output","table_s2","total_css_nc_b.csv"))
 
 models$exploratory$total_css_noncarrier %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
-  write_excel_csv("./output/table_s2/total_css_nc_unrounded.csv")
+  write_excel_csv(here("r","output","table_s2","total_css_nc_unrounded.csv"))
 
 # Table S3 ---------------------------------------------------------------
 
@@ -645,16 +645,16 @@ models$exploratory$domain_css <-
 models$exploratory$domain_css %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table_s3/domain_css_all_or.csv")
+  write_excel_csv(here("r","output","table_s3","domain_css_all_or.csv"))
 
 models$exploratory$domain_css %>%
   tidy(conf.int = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table_s3/domain_css_all_b.csv")
+  write_excel_csv(here("r","output","table_s3","domain_css_all_b.csv"))
 
 models$exploratory$domain_css %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
-  write_excel_csv("./output/table_s3/domain_css_all_unrounded.csv")
+  write_excel_csv(here("r","output","table_s3","domain_css_all_unrounded.csv"))
 
 exploratory_duplication_domain <- filter(
   subjects$analysis$duplication, 
@@ -676,16 +676,16 @@ models$exploratory$domain_css_duplication <-
 models$exploratory$domain_css_duplication %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table_s3/domain_css_dup_or.csv")
+  write_excel_csv(here("r","output","table_s3","domain_css_dup_or.csv"))
 
 models$exploratory$domain_css_duplication %>%
   tidy(conf.int = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table_s3/domain_css_dup_b.csv")
+  write_excel_csv(here("r","output","table_s3","domain_css_dup_b.csv"))
 
 models$exploratory$domain_css_duplication %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
-  write_excel_csv("./output/table_s3/domain_css_dup_unrounded.csv")
+  write_excel_csv(here("r","output","table_s3","domain_css_dup_unrounded.csv"))
 
 exploratory_deletion_domain <- filter(subjects$analysis$deletion, !is.na(ados_css_rrb_derived) & !is.na(ados_css_sa_derived))
 
@@ -705,16 +705,16 @@ models$exploratory$domain_css_deletion <-
 models$exploratory$domain_css_deletion %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table_s3/domain_css_del_or.csv")
+  write_excel_csv(here("r","output","table_s3","domain_css_del_or.csv"))
 
 models$exploratory$domain_css_deletion %>%
   tidy(conf.int = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table_s3/domain_css_del_b.csv")
+  write_excel_csv(here("r","output","table_s3","domain_css_del_b.csv"))
 
 models$exploratory$domain_css_deletion %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
-  write_excel_csv("./output/table_s3/domain_css_del_unrounded.csv")
+  write_excel_csv(here("r","output","table_s3","domain_css_del_unrounded.csv"))
 
 exploratory_noncarrier_domain <- filter(
   subjects$analysis$noncarrier, 
@@ -736,13 +736,13 @@ models$exploratory$domain_css_noncarrier <-
 models$exploratory$domain_css_noncarrier %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table_s3/domain_css_nc_or.csv")
+  write_excel_csv(here("r","output","table_s3","domain_css_nc_or.csv"))
 
 models$exploratory$domain_css_noncarrier %>%
   tidy(conf.int = TRUE) %>%
   mutate_at(vars(-term), round, digits = 3) %>%
-  write_excel_csv("./output/table_s3/domain_css_nc_b.csv")
+  write_excel_csv(here("r","output","table_s3","domain_css_nc_b.csv"))
 
 models$exploratory$domain_css_noncarrier %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
-  write_excel_csv("./output/table_s3/domain_css_nc_unrounded.csv")
+  write_excel_csv(here("r","output","table_s3","domain_css_nc_unrounded.csv"))
