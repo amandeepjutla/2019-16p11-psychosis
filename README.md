@@ -1,6 +1,6 @@
 # 2019-16p11-psychosis
 
-These scripts will reproduce the analyses reported in Jutla A, Turner JB, Snyder LG, Chung WK, Veenstra-VanderWeele J. "Psychotic symptoms in 16p11.2 copy number variant carriers." Manuscript in preparation.
+These scripts will reproduce the analyses reported in Jutla A, Turner JB, Snyder LG, Chung WK, Veenstra-VanderWeele J. "Psychotic symptoms in 16p11.2 copy number variant carriers."
 
 # How to use
 
