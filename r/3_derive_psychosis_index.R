@@ -301,15 +301,21 @@ svip_summary <- svip_summary %>% mutate(
   gender =
     if_else(sex == "female", 1, 0, 0)) 
 
-# Create binary psychotic symptom presence variable
+# Create binary psychotic symptom presence variable (without age cutoff)
 svip_summary <- svip_summary %>% mutate(
-  binary_psychosis =
+  binary_psychosis_no_age_cutoff =
     if_else((bcl_positive + scl_positive + disc_positive + sops_positive > 1), 1, 0, 0))
 
 # Binary psychotic symptom presence if ABCL/CBCL is removed
 svip_summary <- svip_summary %>% mutate(
   binary_psychosis_no_bcl =
     if_else((scl_positive + disc_positive + sops_positive > 1), 1, 0, 0))
+
+# Create binary psychotic symptom presence variable with age cutoff 
+# (this is used in the paper); 84 months = age 7
+svip_summary <- svip_summary %>% mutate(
+  binary_psychosis =
+    if_else((binary_psychosis_no_age_cutoff == 1 & age_months>84), 1, 0, 0))
 
 # Total set of deletions, duplications, and noncarrier family members
 svip_summary <- svip_summary %>% mutate(

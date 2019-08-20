@@ -31,10 +31,10 @@ SVIP_CLEAN <- here("data","clean","Simons_VIP__16p11.2_Dataset_v10.0")
 SVIP_RAW <- here("data","raw","sops.csv")
 
 # Threshold for CBCL/ABCL Thought Problems T Score.
-# 60 is 1 SD above mean (and was used in our main analyses).
-# 70 is 2 SDs (more stringent, used in sensitivity analyses).
+# 60 is 1 SD above mean
+# 70 is 2 SDs (more stringent, used in the paper).
 
-BCL_T_SCORE_CUTOFF = 60
+BCL_T_SCORE_CUTOFF = 70
 
 # Give dplyr namespace priority
 conflict_prefer("filter", "dplyr") 
