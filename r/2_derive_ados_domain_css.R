@@ -168,12 +168,22 @@ for (row in 1:nrow(ados1)) {
       if (total == 0 | total == 1 | total == 2 | total == 3) { 
         ados1[row, "total_css"] <- 1 
       }
-      else if (total == 4 | total == 5 | total == 6) { ados1[row, "total_css"] <- 2 }
-      else if (total == 7 | total == 8 | total == 9 | total == 10) { ados1[row, "total_css"] <- 3 }
+      else if (
+        total == 4 | 
+        total == 5 | 
+        total == 6) { ados1[row, "total_css"] <- 2 }
+      else if (
+        total == 7 | 
+        total == 8 | 
+        total == 9 | 
+        total == 10) { ados1[row, "total_css"] <- 3 }
       else if (total == 11 | total == 12) { 
         ados1[row, "total_css"] <- 4 
       }
-      else if (total == 13 | total == 14 | total == 15) { ados1[row, "total_css"] <- 5 }
+      else if (
+        total == 13 | 
+        total == 14 | 
+        total == 15) { ados1[row, "total_css"] <- 5 }
       else if (total == 16 | total == 17 | total == 18 | total == 19) { 
         ados1[row, "total_css"] <- 6 }
       else if (total == 20 | total == 21) { ados1[row, "total_css"] <- 7 }
@@ -187,15 +197,25 @@ for (row in 1:nrow(ados1)) {
       if (total == 0 | total == 1 | total == 2 | total == 3) { 
         ados1[row, "total_css"] <- 1 
       }
-      else if (total == 4 | total == 5 | total == 6) { ados1[row, "total_css"] <- 2 }
-      else if (total == 7 | total == 8 | total == 9 | total == 10) { ados1[row, "total_css"] <- 3 }
+      else if (
+        total == 4 | 
+        total == 5 | 
+        total == 6) { ados1[row, "total_css"] <- 2 }
+      else if (
+        total == 7 | 
+        total == 8 | 
+        total == 9 | 
+        total == 10) { ados1[row, "total_css"] <- 3 }
       else if (total == 11 | total == 12 | total == 13) { 
         ados1[row, "total_css"] <- 4 
       }
       else if (total == 14 | total == 15) { ados1[row, "total_css"] <- 5 }
       else if (total == 16 | total == 17 | total == 18 | total == 19) { 
         ados1[row, "total_css"] <- 6 }
-      else if (total == 20 | total == 21 | total == 22) { ados1[row, "total_css"] <- 7 }
+      else if (
+        total == 20 | 
+        total == 21 | 
+        total == 22) { ados1[row, "total_css"] <- 7 }
       else if (total == 23 | total == 24) { ados1[row, "total_css"] <- 8 }
       else if (total == 25) { ados1[row, "total_css"] <- 9 }
       else if (total >= 26) { ados1[row, "total_css"] <- 10 }
@@ -320,8 +340,14 @@ for (row in 1:nrow(ados1)) {
         else if (total == 11) { ados1[row, "total_css"] <- 5 }
         else if (total == 12 | total == 13) { 
           ados1[row, "total_css"] <- 6 }
-        else if (total == 14 | total == 15 | total == 16) { ados1[row, "total_css"] <- 7 }
-        else if (total == 17 | total == 18 | total == 19) { ados1[row, "total_css"] <- 8 }
+        else if (
+          total == 14 |
+          total == 15 | 
+          total == 16) { ados1[row, "total_css"] <- 7 }
+        else if (
+          total == 17 | 
+          total == 18 | 
+          total == 19) { ados1[row, "total_css"] <- 8 }
         else if (total == 20 | total == 21) { ados1[row, "total_css"] <- 9 }
         else if (total >= 22) { ados1[row, "total_css"] <- 10 }
       }
@@ -339,7 +365,10 @@ for (row in 1:nrow(ados1)) {
         else if (total == 10 | total == 11) { ados1[row, "total_css"] <- 5 }
         else if (total == 12 | total == 13 | total == 14) { 
           ados1[row, "total_css"] <- 6 }
-        else if (total == 15 | total == 16 | total == 17) { ados1[row, "total_css"] <- 7 }
+        else if (
+          total == 15 |
+          total == 16 | 
+          total == 17) { ados1[row, "total_css"] <- 7 }
         else if (total == 18 | total == 19) { ados1[row, "total_css"] <- 8 }
         else if (total == 20 | total == 21) { ados1[row, "total_css"] <- 9 }
         else if (total >= 22) { ados1[row, "total_css"] <- 10 }
@@ -351,14 +380,20 @@ for (row in 1:nrow(ados1)) {
           ados1[row, "total_css"] <- 1 
         }
         else if (total == 3 | total == 4) { ados1[row, "total_css"] <- 2 }
-        else if (total == 5 | total == 6 | total == 7) { ados1[row, "total_css"] <- 3 }
+        else if (
+          total == 5 |
+          total == 6 | 
+          total == 7) { ados1[row, "total_css"] <- 3 }
         else if (total == 8 | total == 9) { 
           ados1[row, "total_css"] <- 4 
         }
         else if (total == 10 | total == 11) { ados1[row, "total_css"] <- 5 }
         else if (total == 12 | total == 13 | total == 14 | total == 15) { 
           ados1[row, "total_css"] <- 6 }
-        else if (total == 16 | total == 17 | total == 18) { ados1[row, "total_css"] <- 7 }
+        else if (
+          total == 16 | 
+          total == 17 | 
+          total == 18) { ados1[row, "total_css"] <- 7 }
         else if (total == 19 | total == 20) { ados1[row, "total_css"] <- 8 }
         else if (total == 21 | total == 22) { ados1[row, "total_css"] <- 9 }
         else if (total >= 23) { ados1[row, "total_css"] <- 10 }
@@ -375,9 +410,17 @@ for (row in 1:nrow(ados1)) {
           ados1[row, "total_css"] <- 4 
         }
         else if (total == 11) { ados1[row, "total_css"] <- 5 }
-        else if (total == 12 | total == 13 | total == 14 | total == 15 | total == 16) { 
+        else if (
+          total == 12 | 
+          total == 13 | 
+          total == 14 | 
+          total == 15 | 
+          total == 16) { 
           ados1[row, "total_css"] <- 6 }
-        else if (total == 17 | total == 18 | total == 19) { ados1[row, "total_css"] <- 7 }
+        else if (
+          total == 17 | 
+          total == 18 | 
+          total == 19) { ados1[row, "total_css"] <- 7 }
         else if (total == 20 | total == 21) { ados1[row, "total_css"] <- 8 }
         else if (total == 22 | total == 23) { ados1[row, "total_css"] <- 9 }
         else if (total >= 24) { ados1[row, "total_css"] <- 10 }
@@ -388,7 +431,10 @@ for (row in 1:nrow(ados1)) {
         if (total == 0 | total == 1 | total == 2) { 
           ados1[row, "total_css"] <- 1 
         }
-        else if (total == 3 | total == 4 | total == 5) { ados1[row, "total_css"] <- 2 }
+        else if (
+          total == 3 | 
+          total == 4 | 
+          total == 5) { ados1[row, "total_css"] <- 2 }
         else if (total == 6 | total == 7) { ados1[row, "total_css"] <- 3 }
         else if (total == 8 | total == 9) { 
           ados1[row, "total_css"] <- 4 
@@ -489,7 +535,11 @@ for (row in 1:nrow(ados2)) {
     else if (sa == 7) { ados2[row, "sa_css"] <- 5 }
     else if (sa == 8 | sa == 9) { ados2[row, "sa_css"] <- 6 }
     else if (sa == 10 | sa == 11) { ados2[row, "sa_css"] <- 7 }
-    else if (sa == 12 | sa == 13 | sa == 14 | sa == 15) { ados2[row, "sa_css"] <- 8 }
+    else if (
+      sa == 12 | 
+      sa == 13 | 
+      sa == 14 | 
+      sa == 15) { ados2[row, "sa_css"] <- 8 }
     else if (sa == 16) { ados2[row, "sa_css"] <- 9 }
     else if (sa == 17 | sa == 18 | sa == 19 | sa == 20) { 
       ados2[row, "sa_css"] <- 10 
@@ -538,7 +588,10 @@ for (row in 1:nrow(ados2)) {
       ados2[row, "total_css"] <- 6 }
     else if (total == 12) { ados2[row, "total_css"] <- 7 }
     else if (total == 13 | total == 14) { ados2[row, "total_css"] <- 8 }
-    else if (total == 15 | total == 16 | total == 17) { ados2[row, "total_css"] <- 9 }
+    else if (
+      total == 15 | 
+      total == 16 | 
+      total == 17) { ados2[row, "total_css"] <- 9 }
     else if (total >= 18) { ados2[row, "total_css"] <- 10 }
   }
   
@@ -574,7 +627,10 @@ for (row in 1:nrow(ados2)) {
     else if (total == 8 | total == 9) { ados2[row, "total_css"] <- 5 }
     else if (total == 10 | total == 11 | total == 12 | total == 13) { 
       ados2[row, "total_css"] <- 6 }
-    else if (total == 14 | total == 15 | total == 16) { ados2[row, "total_css"] <- 7 }
+    else if (
+      total == 14 | 
+      total == 15 | 
+      total == 16) { ados2[row, "total_css"] <- 7 }
     else if (total == 17 | total == 18) { ados2[row, "total_css"] <- 8 }
     else if (total == 19 | total == 20) { ados2[row, "total_css"] <- 9 }
     else if (total >= 21) { ados2[row, "total_css"] <- 10 }
@@ -591,11 +647,21 @@ for (row in 1:nrow(ados2)) {
     else if (total == 8) { 
       ados2[row, "total_css"] <- 4 
     }
-    else if (total == 9 | total == 10 | total == 11 | total == 12 | total == 13 | total == 14) { 
+    else if (
+      total == 9 | 
+      total == 10 | 
+      total == 11 | 
+      total == 12 | 
+      total == 13 | 
+      total == 14) { 
       ados2[row, "total_css"] <- 6 }
     else if (total == 15 | total == 16) { 
       ados2[row, "total_css"] <- 7 }
-    else if (total == 17 | total == 18 | total == 19 | total == 20) { ados2[row, "total_css"] <- 8 }
+    else if (
+      total == 17 | 
+      total == 18 | 
+      total == 19 | 
+      total == 20) { ados2[row, "total_css"] <- 8 }
     else if (total == 21 | total == 22) { ados2[row, "total_css"] <- 9 }
     else if (total >= 23) { ados2[row, "total_css"] <- 10 }
   }
@@ -605,16 +671,29 @@ for (row in 1:nrow(ados2)) {
     if (total == 0 | total == 1 | total == 2) { 
       ados2[row, "total_css"] <- 1 
     }
-    else if (total == 3 | total == 4 | total == 5) { ados2[row, "total_css"] <- 2 }
+    else if (
+      total == 3 | 
+      total == 4 | 
+      total == 5) { ados2[row, "total_css"] <- 2 }
     else if (total == 6 | total == 7) { ados2[row, "total_css"] <- 3 }
     else if (total == 8) { 
       ados2[row, "total_css"] <- 4 
     }
-    else if (total == 9 | total == 10 | total == 11 | total == 12 | total == 13 | total == 14) { 
+    else if (
+      total == 9 | 
+      total == 10 | 
+      total == 11 | 
+      total == 12 | 
+      total == 13 | 
+      total == 14) { 
       ados2[row, "total_css"] <- 6 }
     else if (total == 15 | total == 16 | total == 17) { 
       ados2[row, "total_css"] <- 7 }
-    else if (total == 18 | total == 19 | total == 20 | total == 21) { ados2[row, "total_css"] <- 8 }
+    else if (
+      total == 18 | 
+      total == 19 | 
+      total == 20 | 
+      total == 21) { ados2[row, "total_css"] <- 8 }
     else if (total == 22 | total == 23) { ados2[row, "total_css"] <- 9 }
     else if (total >= 24) { ados2[row, "total_css"] <- 10 }
   }
@@ -624,17 +703,32 @@ for (row in 1:nrow(ados2)) {
     if (total == 0 | total == 1 | total == 2) { 
       ados2[row, "total_css"] <- 1 
     }
-    else if (total == 3 | total == 4 | total == 5) { ados2[row, "total_css"] <- 2 }
+    else if (
+      total == 3 | 
+      total == 4 | 
+      total == 5) { ados2[row, "total_css"] <- 2 }
     else if (total == 6 | total == 7) { ados2[row, "total_css"] <- 3 }
     else if (total == 8) { 
       ados2[row, "total_css"] <- 4 
     }
-    else if (total == 9 | total == 10 | total == 11 | total == 12 | total == 13 | total == 14) { 
+    else if (
+      total == 9 | 
+      total == 10 | 
+      total == 11 | 
+      total == 12 | 
+      total == 13 | 
+      total == 14) { 
       ados2[row, "total_css"] <- 6 }
     else if (total == 15 | total == 16 | total == 17) { 
       ados2[row, "total_css"] <- 7 }
-    else if (total == 18 | total == 19 | total == 20) { ados2[row, "total_css"] <- 8 }
-    else if (total == 21 | total == 22 | total == 23) { ados2[row, "total_css"] <- 9 }
+    else if (
+      total == 18 | 
+      total == 19 | 
+      total == 20) { ados2[row, "total_css"] <- 8 }
+    else if (
+      total == 21 | 
+      total == 22 | 
+      total == 23) { ados2[row, "total_css"] <- 9 }
     else if (total >= 24) { ados2[row, "total_css"] <- 10 }
   }
 }
@@ -711,9 +805,15 @@ for (row in 1:nrow(ados3)) {
     else if (total == 5 | total == 6) { ados3[row, "total_css"] <- 3}
     else if (total == 7) { ados3[row, "total_css"] <- 4}
     else if (total == 8) { ados3[row, "total_css"] <- 5}
-    else if (total == 9 | total == 10 | total == 11) { ados3[row, "total_css"] <- 6}
+    else if (
+      total == 9 | 
+      total == 10 | 
+      total == 11) { ados3[row, "total_css"] <- 6}
     else if (total == 12) { ados3[row, "total_css"] <- 7}
-    else if (total == 13 | total == 14 | total == 15) { ados3[row, "total_css"] <- 8}
+    else if (
+      total == 13 | 
+      total == 14 | 
+      total == 15) { ados3[row, "total_css"] <- 8}
     else if (total == 16 | total == 17) { ados3[row, "total_css"] <- 9}
     else if (total >= 18) { ados3[row, "total_css"] <- 10}
   }
@@ -730,7 +830,10 @@ for (row in 1:nrow(ados3)) {
     else if (total == 9 | total == 10) { ados3[row, "total_css"] <- 6}
     else if (total == 11 | total == 12) { ados3[row, "total_css"] <- 7}
     else if (total == 13 | total == 14) { ados3[row, "total_css"] <- 8}
-    else if (total == 15 | total == 16 | total == 17) { ados3[row, "total_css"] <- 9}
+    else if (
+      total == 15 | 
+      total == 16 | 
+      total == 17) { ados3[row, "total_css"] <- 9}
     else if (total >= 18) { ados3[row, "total_css"] <- 10}
   }
   
@@ -745,7 +848,10 @@ for (row in 1:nrow(ados3)) {
     else if (total == 9 | total == 10) { ados3[row, "total_css"] <- 6}
     else if (total == 11 | total == 12) { ados3[row, "total_css"] <- 7}
     else if (total == 13 | total == 14) { ados3[row, "total_css"] <- 8}
-    else if (total == 15 | total == 16 | total == 17) { ados3[row, "total_css"] <- 9}
+    else if (
+      total == 15 | 
+      total == 16 | 
+      total == 17) { ados3[row, "total_css"] <- 9}
     else if (total >= 18) { ados3[row, "total_css"] <- 10}
   } 
 }
@@ -950,9 +1056,12 @@ for (row in 1:nrow(ados4)) {
   }
 }
 
-svip$diagnosis_summary <- svip$diagnosis_summary %>% mutate(ados_css_total_derived = NA)
-svip$diagnosis_summary <- svip$diagnosis_summary %>% mutate(ados_css_sa_derived = NA)
-svip$diagnosis_summary <- svip$diagnosis_summary %>% mutate(ados_css_rrb_derived = NA)
+svip$diagnosis_summary <- svip$diagnosis_summary %>% 
+  mutate(ados_css_total_derived = NA)
+svip$diagnosis_summary <- svip$diagnosis_summary %>% 
+  mutate(ados_css_sa_derived = NA)
+svip$diagnosis_summary <- svip$diagnosis_summary %>% 
+  mutate(ados_css_rrb_derived = NA)
 
 # Merge ADOS dataframes
 
@@ -960,16 +1069,24 @@ for (row in 1:nrow(svip$diagnosis_summary)) {
   individual <- svip$diagnosis_summary[row, "individual"]
   
   # total
-  if(individual == ados4[row, "individual"] & !is.na(ados4[row, "total_css"])) {
+  if(
+    individual == ados4[row, "individual"] & 
+    !is.na(ados4[row, "total_css"])) {
     svip$diagnosis_summary[row,"ados_css_total_derived"] <- ados4[row, "total_css"]
   }
-  else if(individual == ados3[row, "individual"] & !is.na(ados3[row, "total_css"])) {
+  else if(
+    individual == ados3[row, "individual"] & 
+    !is.na(ados3[row, "total_css"])) {
     svip$diagnosis_summary[row,"ados_css_total_derived"] <- ados3[row, "total_css"]
   }
-  else if(individual == ados2[row, "individual"] & !is.na(ados2[row, "total_css"])) {
+  else if(
+    individual == ados2[row, "individual"] & 
+    !is.na(ados2[row, "total_css"])) {
     svip$diagnosis_summary[row,"ados_css_total_derived"] <- ados2[row, "total_css"]
   }
-  else if(individual == ados1[row, "individual"] & !is.na(ados1[row, "total_css"])) {
+  else if(
+    individual == ados1[row, "individual"] & 
+    !is.na(ados1[row, "total_css"])) {
     svip$diagnosis_summary[row,"ados_css_total_derived"] <- ados1[row, "total_css"]
   }
 
@@ -991,13 +1108,18 @@ for (row in 1:nrow(svip$diagnosis_summary)) {
   if(individual == ados4[row, "individual"] & !is.na(ados4[row, "rrb_css"])) {
     svip$diagnosis_summary[row,"ados_css_rrb_derived"] <- ados4[row, "rrb_css"]
   }
-  else if(individual == ados3[row, "individual"] & !is.na(ados3[row, "rrb_css"])) {
+  else if(
+    individual == ados3[row, "individual"] & 
+    !is.na(ados3[row, "rrb_css"])) {
     svip$diagnosis_summary[row,"ados_css_rrb_derived"] <- ados3[row, "rrb_css"]
   }
-  else if(individual == ados2[row, "individual"] & !is.na(ados2[row, "rrb_css"])) {
+  else if(
+    individual == ados2[row, "individual"] & 
+    !is.na(ados2[row, "rrb_css"])) {
     svip$diagnosis_summary[row,"ados_css_rrb_derived"] <- ados2[row, "rrb_css"]
   }
-  else if(individual == ados1[row, "individual"] & !is.na(ados1[row, "rrb_css"])) {
+  else if(individual == ados1[row, "individual"] & 
+    !is.na(ados1[row, "rrb_css"])) {
     svip$diagnosis_summary[row,"ados_css_rrb_derived"] <- ados1[row, "rrb_css"]
   }
 }
@@ -1012,7 +1134,7 @@ for (row in 1:nrow(svip$diagnosis_summary)) {
   
   if(is.na(svip$diagnosis_summary[row, "diagnosis_summary.ados_css"]) &
      !is.na(svip$diagnosis_summary[row, "ados_css_total_derived"])) {
-    svip$diagnosis_summary[row,"ados_css_total_combined"] <- svip$diagnosis_summary[row, "ados_css_total_derived"]
+       svip$diagnosis_summary[row,"ados_css_total_combined"] <- svip$diagnosis_summary[row, "ados_css_total_derived"]
   }
 }
 

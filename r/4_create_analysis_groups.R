@@ -51,12 +51,16 @@ subjects$raw$total <- subjects$raw$total %>% filter(
   !(sfari_id %in% SUBJECTS_NO_IQ))
 
 # Remove observations missing age and any others missing IQ
-subjects$raw$total <- filter(subjects$raw$total, !is.na(diagnosis_summary.best_full_scale_iq))
+subjects$raw$total <- subjects$raw$total %>% filter(
+  !is.na(diagnosis_summary.best_full_scale_iq))
 
 # Carrier-defined subgroups of total sample
-subjects$raw$duplication <- subjects$raw$total %>% filter(duplication==1)
-subjects$raw$deletion <- subjects$raw$total %>% filter(deletion==1)
-subjects$raw$noncarrier <- subjects$raw$total %>% filter(noncarrier_family_member==1)
+subjects$raw$duplication <- subjects$raw$total %>% filter(
+  duplication==1)
+subjects$raw$deletion <- subjects$raw$total %>% filter(
+  deletion==1)
+subjects$raw$noncarrier <- subjects$raw$total %>% filter(
+  noncarrier_family_member==1)
 
 # Create explicit analysis sample (although not different from total sample)
 subjects$analysis <- list()
@@ -71,7 +75,6 @@ subjects$analysis$mutation <- subjects$analysis$all %>% filter(
   duplication == 1 | deletion == 1)
 subjects$analysis$noncarrier <- subjects$analysis$all %>% filter(
   noncarrier_family_member == 1)
-
 
 # Transform age into years
 

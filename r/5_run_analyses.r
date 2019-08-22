@@ -509,7 +509,8 @@ models$base$noncarriers %>%
 
 # Table S2 ---------------------------------------------------------
 
-exploratory_all <- filter(subjects$analysis$all, !is.na(ados_css_total_combined))
+exploratory_all <- subjects$analysis$all %>% filter(
+  !is.na(ados_css_total_combined))
 
 models$exploratory$total_css <- 
   geeglm(binary_psychosis ~ 
@@ -539,7 +540,8 @@ models$exploratory$total_css %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
   write_excel_csv(here("r","output","table_s2","total_css_all_unrounded.csv"))
 
-exploratory_duplication <- filter(subjects$analysis$duplication, !is.na(ados_css_total_combined))
+exploratory_duplication <- subjects$analysis$duplication %>% filter(
+  !is.na(ados_css_total_combined))
 
 models$exploratory$total_css_duplication <- 
   geeglm(binary_psychosis ~ 
@@ -567,7 +569,8 @@ models$exploratory$total_css_duplication %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
   write_excel_csv(here("r","output","table_s2","total_css_dup_unrounded.csv"))
 
-exploratory_deletion <- filter(subjects$analysis$deletion, !is.na(ados_css_total_combined))
+exploratory_deletion <- subjects$analysis$deletion %>% filter(
+  !is.na(ados_css_total_combined))
 
 models$exploratory$total_css_deletion <- 
   geeglm(binary_psychosis ~ 
@@ -595,7 +598,8 @@ models$exploratory$total_css_deletion %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
   write_excel_csv(here("r","output","table_s2","total_css_del_unrounded.csv"))
 
-exploratory_noncarrier <- filter(subjects$analysis$noncarrier, !is.na(ados_css_total_combined))
+exploratory_noncarrier <- subjects$analysis$noncarrier %>% filter(
+  !is.na(ados_css_total_combined))
 
 models$exploratory$total_css_noncarrier <- 
   geeglm(binary_psychosis ~ 
@@ -625,7 +629,8 @@ models$exploratory$total_css_noncarrier %>%
 
 # Table S3 ---------------------------------------------------------------
 
-exploratory_all_domain <- filter(subjects$analysis$all, !is.na(ados_css_rrb_derived) & !is.na(ados_css_sa_derived))
+exploratory_all_domain <- subjects$analysis$all %>% filter(
+  !is.na(ados_css_rrb_derived) & !is.na(ados_css_sa_derived))
 
 models$exploratory$domain_css <- 
   geeglm(binary_psychosis ~ 
@@ -687,7 +692,8 @@ models$exploratory$domain_css_duplication %>%
   tidy(conf.int = TRUE, exponentiate = TRUE) %>%
   write_excel_csv(here("r","output","table_s3","domain_css_dup_unrounded.csv"))
 
-exploratory_deletion_domain <- filter(subjects$analysis$deletion, !is.na(ados_css_rrb_derived) & !is.na(ados_css_sa_derived))
+exploratory_deletion_domain <- subjects$analysis$deletion %>% filter(
+  !is.na(ados_css_rrb_derived) & !is.na(ados_css_sa_derived))
 
 models$exploratory$domain_css_deletion <- 
   geeglm(binary_psychosis ~ 

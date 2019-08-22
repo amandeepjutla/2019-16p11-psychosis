@@ -1,8 +1,8 @@
 # 0_initialize.r
-# Last updated 20190416
+# Last updated 20190822
 
 # checkpoint will look for (and, if necessary, install) 
-# all packages except fifer, which is not on MRAN).
+# packages from the snapshot date 
 library(checkpoint) 
 checkpoint("2018-11-25")
 
@@ -14,11 +14,38 @@ library(imputeTS) # na.replace
 library(conflicted) # conflict_prefer
 library(arm) # rescale
 
-# Uncomment the below 2 lines to install fifer from GitHub:
-# library(devtools) # install_github
-# devtools:install_github("dustinfife/fifer")
+# This function is adapted from Dustin Fife's "fifer" package, which is not
+# on MRAN/CRAN but is available at https://github.com/dustinfife/fifer
+chisq.post.hoc <- function(
+    tbl,
+    test=c("fisher.test"), 
+    popsInRows=TRUE,
+    control=c("fdr","BH","BY","bonferroni","holm","hochberg","hommel"),
+    digits=4, ...) {
+        control <- match.arg(control) # extract correction method
+        test = match.fun(test) # extract which test (fisher or chi square)
 
-library(fifer) # chisq.post.hoc
+        if (!popsInRows) tbl <- t(tbl)  # test rows or columns
+        popsNames <- rownames(tbl)
+        
+        prs <- combn(1:nrow(tbl),2) # come up with all possible comparisons
+        
+        tests <- ncol(prs) # preallocate
+        pvals <- numeric(tests)
+        lbls <- character(tests)
+        
+        for (i in 1:tests) {
+            pvals[i] <- test(tbl[prs[,i],], ...)$p.value
+            lbls[i] <- paste(popsNames[prs[,i]],collapse=" vs. ")
+        }
+    
+        adj.pvals <- p.adjust(pvals,method=control)
+        cat("Adjusted p-values used the",control,"method.\n\n")
+        data.frame(
+            comparison=lbls,
+            raw.p=round(pvals,digits),
+            adj.p=round(adj.pvals,digits))
+}
 
 # These scripts pull data from two sources. "SVIP_CLEAN" is the 
 # location of the extracted `Simons_VIP__16p11.2_Dataset_v10.0` 
@@ -26,15 +53,8 @@ library(fifer) # chisq.post.hoc
 # is the location of a single raw CSV file containing M-SOPS data, 
 # which was not part of the "clean" data release, but which we received 
 # by request from the Simons Foundation.
-
 SVIP_CLEAN <- here("data","clean","Simons_VIP__16p11.2_Dataset_v10.0")
 SVIP_RAW <- here("data","raw","sops.csv")
-
-# Threshold for CBCL/ABCL Thought Problems T Score.
-# 60 is 1 SD above mean
-# 70 is 2 SDs (more stringent, used in the paper).
-
-BCL_T_SCORE_CUTOFF = 70
 
 # Give dplyr namespace priority
 conflict_prefer("filter", "dplyr") 
