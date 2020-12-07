@@ -1,12 +1,12 @@
 # 2019-16p11-psychosis
 
-These scripts will reproduce the analyses reported in Jutla A, Turner JB, Snyder LG, Chung WK, Veenstra-VanderWeele J. "Psychotic symptoms in 16p11.2 copy number variant carriers."
+These scripts will reproduce the analyses reported in Jutla A, Turner JB, Snyder LG, Chung WK, Veenstra-VanderWeele J. "Psychotic symptoms in 16p11.2 copy number variant carriers." *Autism Research*. 2020;13(2):187-198.
 
 # How to use
 
-Extract the officially released Simons VIP 16p11.2 dataset archive into `data/clean` and place CSV of M-SOPS data into `data/raw.` Run `r/0_initialize.r` in a clean R environment, and look in `r/output` for results.
+Extract the `Simons_VIP__16p11.2_Dataset_v10.0` archive into `data/clean` and place CSV of M-SOPS data into `data/raw.` Run `r/0_initialize.r` in a clean R environment, and look in `r/output` for results.
 
-# Tested configuration
+# Known working configuration
 
 Output of `sessionInfo()` for my environment:
 
@@ -71,6 +71,7 @@ loaded via a namespace (and not attached):
 
 # Changelog
 
+- 20201207: updated citation.
 - 20190417: cleaned up a little.
 - 20190416: uploaded code.
 - 20190202: created repository.
